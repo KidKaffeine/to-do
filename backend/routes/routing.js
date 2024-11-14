@@ -10,23 +10,23 @@ router.get("/getAll", (req, res) => {
     }
 })
 
-router.post("/create", (req, res) => {
+router.post("/create", async (req, res) => {
     try {
         res.status(201).json({ message: "Task created" })
     } catch (error) {
+        console.log(req.err)
+        throw new Error({ message: "Could not create tasks" })
     }
 })
 
-router.put("/update/:id", (req, res) => {
+router.put("/update/:id", async (req, res) => {
     try {
-        console.log(`${req.params.id}`)
         res.status(200).json({ message: "Task updated" })
     } catch (error) {
         console.log(req.err)
         throw new Error({ message: "Could not update task" })
     }
 })
-
 
 router.delete("/delete/:id", (req, res) => {
     try {
