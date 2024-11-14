@@ -2,11 +2,12 @@ const express = require("express")
 require('dotenv').config()
 
 const app = express()
+const PORT = process.env.PORT
 
-app.get("/api/tasks", (req, res) => {
-    res.send("Hello world")
-})
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+app.use("/api/tasks", require("./routes/routing"))
 
-app.listen(5000, (req, res) => {
-   console.log(`Listening on port ${process.env.PORT}`)
+app.listen(PORT, (req, res) => {
+    console.log(`Listening on port ${PORT}`)
 })
