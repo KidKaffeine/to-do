@@ -1,0 +1,20 @@
+.header {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    padding: 45px;
+}
+
+.heading {
+    font-family: var(--header-font);
+    margin: 0;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.paragraphHeader {
+    grid-row: 2 / 2;
+    grid-column: 3/ 3;
+    color: var(--lemon);
+}
+
