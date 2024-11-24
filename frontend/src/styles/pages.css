@@ -1,0 +1,36 @@
+.registerHeader, 
+.registerSubHeader {
+    font-family: var(--header-font);
+}
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.registerLine {
+    margin: 80px 0 50px;
+    width: 80%;
+    border-color: var(--puma);
+    border-style: solid;
+}
+
+.registerLink  {
+    text-decoration: none;
+    color: var(--lemon);
+}
+
+.registerLink > * {
+    margin-left: 10px;
+}
+
+ @media screen and (min-width: 920px) {
+    .registerForm {
+        justify-content: center;
+        align-items: center;
+    }
+ }

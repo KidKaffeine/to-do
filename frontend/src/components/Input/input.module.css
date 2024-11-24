@@ -1,0 +1,18 @@
+.passwordRegisterInput, 
+.emailRegisterInput,
+.usernameRegisterInput {
+    background-color: transparent;
+    border: solid 1px var(--lemon);
+    height: 30px;
+    width: 98%;
+    border-radius: 7px;
+    padding: 0 0 0 5px;
+}
+
+@media screen and (min-width: 920px) {
+    .passwordRegisterInput, 
+    .emailRegisterInput,
+    .usernameRegisterInput {
+        width: 50%;
+    }
+  }

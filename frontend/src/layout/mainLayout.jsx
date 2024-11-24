@@ -6,7 +6,7 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <Container>
+      <Container className="mainContainer">
         <Outlet />
       </Container>
     </>
