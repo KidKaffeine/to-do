@@ -7,6 +7,13 @@
     width: 98%;
     border-radius: 7px;
     padding: 0 0 0 5px;
+    box-shadow: 0 0 0 40px var(--flamingo) inset ! important
+}
+
+.passwordRegisterInput:focus, 
+.emailRegisterInput:focus,
+.usernameRegisterInput:focus {
+outline: none;
 }
 
 @media screen and (min-width: 920px) {

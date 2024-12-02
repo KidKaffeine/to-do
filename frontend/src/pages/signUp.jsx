@@ -1,15 +1,20 @@
 import "../styles/pages.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import { Form, Link } from "react-router";
+import { Link, Form, redirect } from "react-router";
 import Label from "../components/Label/Label";
 import Input from "../components/Input/Input";
+import Button from "../components/Button/Button";
 
-export default function RegisterForm() {
+export default function SignUp() {
   return (
     <>
       <h2 className="registerHeader">Register with us</h2>
-      <Form type="post" action="/register" className="registerForm">
+      <Form
+        method="post"
+        className="registerForm"
+        autoComplete="off"
+      >
         <Label
           htmlFor="username"
           aria-label="username"
@@ -29,7 +34,7 @@ export default function RegisterForm() {
           className="emailRegisterLabel"
         />
         <Input
-          type="text"
+          type="email"
           name="email"
           id="email"
           className="emailRegisterInput"
@@ -46,6 +51,7 @@ export default function RegisterForm() {
           id="password"
           className="passwordRegisterInput"
         />
+        <Button title="Submit" type="submit" className="registerButton" />
       </Form>
       <hr className="registerLine" />
       <h4 className="registerSubHeader"> Already a user? </h4>
@@ -56,3 +62,31 @@ export default function RegisterForm() {
     </>
   );
 }
+
+export const signUpUser = async ({ request }) => {
+  try {
+    const formData = await request.formData();
+    const userData = Object.fromEntries(formData)
+
+    const response = await fetch("http://localhost:8000/api/users/register", {
+      method: "POST", 
+      headers: {
+        "Content-Type" : "application/json"
+      }, 
+      body: JSON.stringify(userData)
+    })
+
+    if(!response.ok) {
+      console.log(response.status)
+      redirect("/signUp")
+    }
+    
+    const user = await response.json()
+      console.log(user)
+
+    return redirect("/login");
+    
+  } catch (error) {
+      throw new Error ("Couldn't create user.")
+  }
+};

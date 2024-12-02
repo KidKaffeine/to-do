@@ -1,6 +1,7 @@
-.emailRegisterLabel, 
+.emailRegisterLabel,
 .passwordRegisterLabel,
 .usernameRegisterLabel {
-    color: var(--lemon);
-    margin: 8px 0px;
+  color: var(--lemon);
+  margin: 8px 0px;
 }
+
