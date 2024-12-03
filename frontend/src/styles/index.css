@@ -14,8 +14,10 @@ body {
   margin: 0;
   background-color: var(--flamingo);
   font-family: var(--text-font);
+  min-height: 100vh;   
+  box-sizing: border-box;
 }
 
 #root {
-  min-height: 100vh;   
+  min-height: 100vh;
  }

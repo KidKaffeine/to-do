@@ -9,7 +9,7 @@ export default function Header() {
           <em>We sincerely apologize for the swearing.</em>
         </p>
       </header>
-      <hr className={styles.headerLine} />
+      <hr className={styles.headerRule} />
     </>
   );
 }

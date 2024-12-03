@@ -77,16 +77,17 @@ export const signUpUser = async ({ request }) => {
     })
 
     if(!response.ok) {
-      console.log(response.status)
-      redirect("/signUp")
+      console.log(response)
+      throw new Error("Test")
     }
     
     const user = await response.json()
-      console.log(user)
+    console.log(user)
 
     return redirect("/login");
     
   } catch (error) {
-      throw new Error ("Couldn't create user.")
+      console.log(error)
+      throw new Error("Email already in use, please log in.")
   }
 };

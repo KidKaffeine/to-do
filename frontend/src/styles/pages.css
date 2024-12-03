@@ -12,7 +12,8 @@
   margin-top: 20px;
 }
 
-.registerLine {
+.registerRule, 
+.landingRule {
   margin: 50px;
   width: 80%;
   border-color: var(--puma);
@@ -28,3 +29,42 @@
   margin-left: 10px;
 }
 
+.landingSignUpLink, 
+.landingLoginLink {
+  text-decoration: none;
+  color: var(--lemon);
+  font-size: 18px;
+  border: solid 1px var(--lemon);
+  width: 50%;
+  text-align: center;
+  border-radius: 7px;
+  margin: 7px 0;
+  line-height: 30px;
+}
+
+.landingLoginLink > *, 
+.landingSignUpLink > * {
+  margin-left: 10px;
+}
+
+.landingRule {
+  margin-top: 150px;
+}
+
+.landingHeader,
+.signUpErrorHeader {
+  font-family: var(--header-font);
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.signUpErrorHeader {
+  padding-inline: 35px;
+} 
+
+@media only screen and (min-width: 768px) {
+  .landingLoginLink, 
+  .landingSignUpLink {
+    width: 20%;
+  }
+}

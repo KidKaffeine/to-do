@@ -18,7 +18,7 @@
     color: var(--lemon);
 }
 
-.headerLine {
+.headerRule {
     border-color: var(--puma);
     width: 80%;
     border-style: solid;
