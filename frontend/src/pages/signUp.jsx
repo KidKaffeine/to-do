@@ -24,7 +24,6 @@ export default function SignUp() {
         <Input
           type="text"
           name="username"
-          id="username"
           className="usernameRegisterInput"
         />
         <Label
@@ -36,7 +35,6 @@ export default function SignUp() {
         <Input
           type="email"
           name="email"
-          id="email"
           className="emailRegisterInput"
         />
         <Label
@@ -48,7 +46,6 @@ export default function SignUp() {
         <Input
           type="password"
           name="password"
-          id="password"
           className="passwordRegisterInput"
         />
         <Button title="Submit" type="submit" className="registerButton" />
@@ -63,7 +60,7 @@ export default function SignUp() {
   );
 }
 
-export const signUpUser = async ({ request }) => {
+export const signUpUserHandler = async ({ request }) => {
   try {
     const formData = await request.formData();
     const userData = Object.fromEntries(formData)

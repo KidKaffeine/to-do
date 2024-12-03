@@ -4,9 +4,9 @@ import {
   Route,
 } from "react-router-dom";
 import Layout from "../layout/mainLayout";
-import Login from "../pages/login";
+import Login, { loginHandler } from "../pages/login";
 import Landing from "../pages/landing";
-import SignUp, { signUpUser } from "../pages/signUp";
+import SignUp, { signUpUserHandler } from "../pages/signUp";
 import SignUpError from "../pages/signUpError";
 
 const router = createBrowserRouter(
@@ -16,10 +16,10 @@ const router = createBrowserRouter(
       <Route
         path="/signUp"
         element={<SignUp />}
-        action={signUpUser}
+        action={signUpUserHandler}
         errorElement={<SignUpError />}
       />
-      <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login />} action={loginHandler}/>
     </Route>
   )
 );

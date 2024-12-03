@@ -1,6 +1,8 @@
 .passwordRegisterInput, 
 .emailRegisterInput,
-.usernameRegisterInput {
+.usernameRegisterInput, 
+.loginEmailInput, 
+.loginPasswordInput {
     background-color: transparent;
     border: solid 1px var(--lemon);
     height: 30px;
@@ -16,10 +18,17 @@
 outline: none;
 }
 
-@media screen and (min-width: 920px) {
+@media screen and (min-width: 768px) {
     .passwordRegisterInput, 
     .emailRegisterInput,
-    .usernameRegisterInput {
-        width: 50%;
+    .usernameRegisterInput, 
+    .loginEmailInput, 
+    .loginPasswordInput {
+        width: 40%;
+    }
+    
+    .loginEmailInput, 
+    .loginPasswordInput {
+        align-self: flex-start;
     }
   }

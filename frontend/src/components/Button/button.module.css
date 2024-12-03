@@ -1,4 +1,5 @@
-.registerButton {
+.registerButton,
+.loginButton {
     align-self: center;
     background-color: var(--lemon);
     font-family: var(--text-font);
@@ -9,7 +10,8 @@
     border-radius: 7px;
 }
 
-.registerButton:hover {
+.registerButton:hover,
+.loginButton:hover {
     background-color: var(--puma);
     color: var(--lemon);
     transition: margin-right 2s;
