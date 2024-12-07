@@ -2,7 +2,7 @@ import "../styles/pages.css";
 import Label from "../components/Label/Label";
 import Input from "../components/Input/Input";
 import Button from "../components/Button/Button";
-import { Form } from "react-router";
+import { Form, redirect } from "react-router";
 
 export default function Login() {
   return (
@@ -38,7 +38,27 @@ export default function Login() {
 }
 
 export const loginHandler = async ({ request }) => {
-    const formData = await request.formData()
-    const data = Object.fromEntries(formData)
-    console.log(data)
+try {
+  const formData = await request.formData()
+  const data = Object.fromEntries(formData)
+
+  const response = await fetch("http://localhost:8000/api/users/login", {
+    method: "POST", 
+    headers: {
+      "Content-Type" : "application/json"
+    }, 
+    body: JSON.stringify(data)
+  })
+
+  let user = await response.json()
+  let loggedInUser = JSON.stringify(user)
+
+  sessionStorage.setItem("User", loggedInUser);
+
+  return redirect("/dashboard");
+} catch (error) {
+  console.log(error);
+  throw new Error("Something went wrong, please try again.");
+}
+
 }

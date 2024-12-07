@@ -5,8 +5,13 @@
     padding: 45px;
 }
 
+.homeLink {
+    text-decoration: none;
+}
+
 .heading {
     font-family: var(--header-font);
+    color: var(--puma);
     margin: 0;
     grid-row: 1 / 2;
     grid-column: 1 / 2;
@@ -14,7 +19,7 @@
 
 .paragraphHeader {
     grid-row: 2 / 2;
-    grid-column: 3/ 3;
+    grid-column: 2/ 2;
     color: var(--lemon);
 }
 

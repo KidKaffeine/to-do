@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const utils = require("../utils/utils")
+const utils = require("../utils/taskUtils")
 const private = require("../middleware/authmiddlewre")
 
 router.get("/getAll", private, utils.getAllTasks)

@@ -10,33 +10,21 @@ export default function SignUp() {
   return (
     <>
       <h2 className="registerHeader">Register with us</h2>
-      <Form
-        method="post"
-        className="registerForm"
-        autoComplete="off"
-      >
+      <Form method="post" className="registerForm" autoComplete="off">
         <Label
           htmlFor="username"
           aria-label="username"
           title="Username:"
           className="usernameRegisterLabel"
         />
-        <Input
-          type="text"
-          name="username"
-          className="usernameRegisterInput"
-        />
+        <Input type="text" name="username" className="usernameRegisterInput" />
         <Label
           htmlFor="email"
           aria-label="email"
           title="Email:"
           className="emailRegisterLabel"
         />
-        <Input
-          type="email"
-          name="email"
-          className="emailRegisterInput"
-        />
+        <Input type="email" name="email" className="emailRegisterInput" />
         <Label
           htmlFor="password"
           aria-label="password"
@@ -63,28 +51,26 @@ export default function SignUp() {
 export const signUpUserHandler = async ({ request }) => {
   try {
     const formData = await request.formData();
-    const userData = Object.fromEntries(formData)
+    const userData = Object.fromEntries(formData);
 
     const response = await fetch("http://localhost:8000/api/users/register", {
-      method: "POST", 
+      method: "POST",
       headers: {
-        "Content-Type" : "application/json"
-      }, 
-      body: JSON.stringify(userData)
-    })
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    });
 
-    if(!response.ok) {
-      console.log(response)
-      throw new Error("Test")
+    if (!response.ok) {
+      console.log(response);
+      throw new Error("Test");
     }
-    
-    const user = await response.json()
-    console.log(user)
+
+    await response.json();
 
     return redirect("/login");
-    
   } catch (error) {
-      console.log(error)
-      throw new Error("Email already in use, please log in.")
+    console.log(error);
+    throw new Error("Email already in use, please log in.");
   }
 };

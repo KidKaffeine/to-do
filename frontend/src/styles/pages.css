@@ -54,7 +54,8 @@
 }
 
 .landingLoginLink > *, 
-.landingSignUpLink > * {
+.landingSignUpLink > *,
+.errorLoginLink > * {
   margin-left: 10px;
 }
 
