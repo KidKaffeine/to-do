@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const user = mongoose.Schema(
   {
-    name: String,
+    username: String,
     email: {
       type: String,
       required: [true, "Please enter an email"],
@@ -10,7 +10,7 @@ const user = mongoose.Schema(
     },
     password: {
       type: String,
-      required: [true, "Please enter an password"],
+      required: [true, "Please enter a password"],
     },
   },
   { timestamps: true }

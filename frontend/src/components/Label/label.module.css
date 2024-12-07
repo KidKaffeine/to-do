@@ -1,0 +1,14 @@
+.emailRegisterLabel,
+.passwordRegisterLabel,
+.usernameRegisterLabel, 
+.loginEmailLabel,
+.loginPasswordLabel {
+  color: var(--lemon);
+  margin: 8px 0px;
+}
+
+.loginEmailLabel,
+.loginPasswordLabel {
+ align-self: flex-start; 
+}
+

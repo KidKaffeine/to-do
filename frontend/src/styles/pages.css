@@ -1,0 +1,82 @@
+.registerHeader,
+.registerSubHeader, 
+.landingHeader,
+.signUpErrorHeader, 
+.loginHeader {
+  font-family: var(--header-font);
+}
+
+.loginHeader {
+  text-align: center;
+  margin: 0;
+}
+
+.registerForm, 
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.registerRule, 
+.landingRule, 
+.loginRule {
+  margin: 50px;
+  width: 80%;
+  border-color: var(--puma);
+  border-style: solid;
+}
+
+.registerLink {
+  text-decoration: none;
+  color: var(--lemon);
+}
+
+.registerLink > * {
+  margin-left: 10px;
+}
+
+.landingSignUpLink, 
+.landingLoginLink,
+.errorLoginLink {
+  text-decoration: none;
+  color: var(--lemon);
+  font-size: 18px;
+  border: solid 1px var(--lemon);
+  width: 50%;
+  text-align: center;
+  border-radius: 7px;
+  margin: 7px 0;
+  line-height: 30px;
+}
+
+.landingLoginLink > *, 
+.landingSignUpLink > *,
+.errorLoginLink > * {
+  margin-left: 10px;
+}
+
+.landingRule,
+.landingErrorRule {
+  margin-top: 150px;
+}
+
+.landingHeader,
+.signUpErrorHeader {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.signUpErrorHeader {
+  padding-inline: 35px;
+} 
+
+@media only screen and (min-width: 768px) {
+  .landingLoginLink, 
+  .landingSignUpLink {
+    width: 20%;
+  }
+}

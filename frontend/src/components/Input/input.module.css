@@ -1,0 +1,34 @@
+.passwordRegisterInput, 
+.emailRegisterInput,
+.usernameRegisterInput, 
+.loginEmailInput, 
+.loginPasswordInput {
+    background-color: transparent;
+    border: solid 1px var(--lemon);
+    height: 30px;
+    width: 98%;
+    border-radius: 7px;
+    padding: 0 0 0 5px;
+    box-shadow: 0 0 0 40px var(--flamingo) inset ! important
+}
+
+.passwordRegisterInput:focus, 
+.emailRegisterInput:focus,
+.usernameRegisterInput:focus {
+outline: none;
+}
+
+@media screen and (min-width: 768px) {
+    .passwordRegisterInput, 
+    .emailRegisterInput,
+    .usernameRegisterInput, 
+    .loginEmailInput, 
+    .loginPasswordInput {
+        width: 40%;
+    }
+    
+    .loginEmailInput, 
+    .loginPasswordInput {
+        align-self: flex-start;
+    }
+  }
