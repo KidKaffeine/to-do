@@ -55,7 +55,7 @@ try {
 
   sessionStorage.setItem("User", loggedInUser);
 
-  return redirect("/dashboard");
+  return redirect("/homepage");
 } catch (error) {
   console.log(error);
   throw new Error("Something went wrong, please try again.");
