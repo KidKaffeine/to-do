@@ -1,4 +1,3 @@
-import "../styles/pages.css";
 import { Link } from "react-router";
 import {
   faUserPlus,
@@ -7,6 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Landing() {
+
   return (
     <>
       <h2 className="landingHeader">Welcome!</h2>
