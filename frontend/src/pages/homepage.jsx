@@ -1,21 +1,15 @@
 import { useOutletContext } from "react-router";
-import DotLoader from "react-spinners/DotLoader";
+import Dashboard from "../components/Dashboard/Dashboard";
 
 export default function Homepage() {
   const user = useOutletContext();
-  
+
   return (
     <>
-      {user.length ? (
-        <h2>Hello, {user[0].username}</h2>
-      ) : (
-        <DotLoader
-          color={"black"}
-          size={75}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
-      )}
+      {user.length && <>
+        <Dashboard />
+        <hr className="homepageRule" />
+      </>}
     </>
   );
 }

@@ -23,7 +23,8 @@
 
 .registerRule, 
 .landingRule, 
-.loginRule {
+.loginRule,
+.homepageRule {
   margin: 50px;
   width: 80%;
   border-color: var(--puma);
@@ -66,7 +67,7 @@
 
 .landingHeader,
 .signUpErrorHeader {
-  margin-bottom: 50px;
+  margin: 50px;
   text-align: center;
 }
 

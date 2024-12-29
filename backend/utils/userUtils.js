@@ -20,16 +20,17 @@ const registerUser = async (req, res) => {
         email,
         password: hashedPass,
       });
-  
-      const { id } = newUser.id;
-      const token = createToken(id);
-  
-      res.status(201).json({
-        _id: newUser.id,
-        username: newUser.username,
-        email: newUser.email,
-        token: token
-      });
+
+      if(newUser) {
+        res.status(201).json({
+          _id: newUser.id,
+          username: newUser.username,
+          email: newUser.email,
+          token: createToken(newUser._id),
+        });
+      } else {
+        res.status(400).json({ message: "Invalid user data."})
+      }
     } catch (error) {
       res.status(400);
       throw new Error("Couldn't create user.");
@@ -41,13 +42,13 @@ const registerUser = async (req, res) => {
       const { email, password } = req.body;
   
       const user = await User.findOne({ email });
-      console.log(user)
+
       if (user && (await bcrypt.compare(password, user.password))) {
         res.json({
           _id: user.id,
           username: user.username,
           email: user.email,
-          token: createToken(user.id),
+          token: createToken(user._id),
         });
       }
     } catch (error) {

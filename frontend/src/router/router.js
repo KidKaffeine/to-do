@@ -9,6 +9,7 @@ import Landing from "../pages/landing";
 import SignUp, { signUpUserHandler } from "../pages/signUp";
 import SignUpError from "../pages/signUpError";
 import Homepage from "../pages/homepage";
+import { tasksLoader } from "../components/Dashboard/Dashboard";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,7 +22,7 @@ const router = createBrowserRouter(
         errorElement={<SignUpError />}
       />
       <Route path="/login" element={<Login />} action={loginHandler}/>
-      <Route path="/homepage" element={<Homepage />} />
+      <Route path="/homepage" element={<Homepage />} loader={tasksLoader}/>
     </Route>
   )
 );

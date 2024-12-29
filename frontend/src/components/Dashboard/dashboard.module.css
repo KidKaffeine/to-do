@@ -1,0 +1,47 @@
+.list {
+    padding: 0;
+    list-style: none;
+    width: 75%;
+    overflow: auto;
+}
+
+.list li {
+    border: solid 1px #000;
+    border-radius: 7px;
+    margin: 7px 0;
+    padding: 10px;
+}
+
+.list li p {
+    margin: 0 0 20px 0;
+}
+
+.list li div > * {
+    display: inline;
+    color: yellow;
+}
+
+.list li div {
+    position: relative;
+}
+
+.editIcon, 
+.deleteIcon {
+    position: absolute;
+}
+
+.deleteIcon {
+    right: 10px;
+    bottom: 2px;
+}
+
+.editIcon {
+    right: 50px;
+    bottom: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+    .list {
+      width: 50%;
+    }
+  }

@@ -62,13 +62,16 @@ export const signUpUserHandler = async ({ request }) => {
     });
 
     if (!response.ok) {
-      console.log(response);
-      throw new Error("Test");
+      console.log(response.error);
+      throw new Error("Couldn't complete sign up.");
     }
 
-    await response.json();
+    let user = await response.json()
+    let userSession = JSON.stringify(user)
+  
+    sessionStorage.setItem("User", [userSession]);
 
-    return redirect("/login");
+    return redirect("/homepage");
   } catch (error) {
     console.log(error);
     throw new Error("Email already in use, please log in.");
