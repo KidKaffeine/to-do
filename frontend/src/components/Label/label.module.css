@@ -12,3 +12,7 @@
  align-self: flex-start; 
 }
 
+.newTaskLabel,
+.checkBoxLabel {
+  color: var(--flamingo);
+}

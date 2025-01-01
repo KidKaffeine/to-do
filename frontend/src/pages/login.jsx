@@ -2,7 +2,7 @@ import "../styles/pages.css";
 import Label from "../components/Label/Label";
 import Input from "../components/Input/Input";
 import Button from "../components/Button/Button";
-import { Form, redirect } from "react-router";
+import { Form } from "react-router";
 
 export default function Login() {
   return (
@@ -33,39 +33,3 @@ export default function Login() {
     </>
   );
 }
-
-export const loginHandler = async ({ request }) => {
-  try {
-    const formData = await request.formData();
-    const data = Object.fromEntries(formData);
-
-    const response = await fetch("http://localhost:8000/api/users/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-
-    await response.json();
-
-    if (!response.ok) {
-      console.log(response.error);
-      throw new Error("Couldn't login user.");
-    }
-
-    let user = await response.json()
-
-    sessionStorage.getItem("User")
-
-    if(!sessionStorage) {
-      let userSession = JSON.stringify(user) 
-      sessionStorage.setItem("User", userSession);
-    }
-
-    return redirect("/homepage");
-  } catch (error) {
-    console.log(error);
-    throw new Error("Something went wrong, please try again.");
-  }
-};

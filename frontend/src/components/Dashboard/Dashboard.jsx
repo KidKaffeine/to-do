@@ -1,42 +1,61 @@
 import styles from "./dashboard.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-import { useLoaderData } from "react-router";
+import { Form } from "react-router";
+import ListItem from "../ListItem/ListItem";
+import Input from "../Input/Input";
+import Label from "../Label/Label";
 
-function Dashboard() {
-  const userTasks = useLoaderData();
-  console.log(userTasks);
+function Dashboard({ tasks }) {
+  const userTasks = tasks.toReversed();
 
   return (
     <>
-      {userTasks.length > 0 ? (
+      {userTasks.length ? (
         <>
-          <h2> Your shit do to: </h2>
+          <h2 className={styles.test}> This is what you have to do:</h2>
           <ul className={styles.list}>
             {userTasks.map((task) => {
-              return (
-                <li key={task._id}>
-                  <p>{task.task}</p>
-                  <div>
-                    <small>{task.createdAt.substring(0, 10)}</small>
-                    <FontAwesomeIcon
-                      icon={faTrash}
-                      className={styles.deleteIcon}
-                    />
-                    <FontAwesomeIcon
-                      icon={faPenToSquare}
-                      className={styles.editIcon}
-                    />
-                  </div>
-                </li>
-              );
+              return <ListItem task={task} key={task._id} />;
             })}
           </ul>
         </>
       ) : (
         <>
-          <h2>No tasks yet</h2>
-          <p>Add your first</p>
+          <div className={styles.taskCard}>
+            <h2>
+              <em> You have nothing do...</em>
+              <hr/>
+            </h2>
+            <Form
+              method="post"
+              className={styles.addTaskForm}
+              autoComplete="off"
+            >
+              <Label
+                htmlFor={"newTask"}
+                ariaLabel={"newTask input"}
+                className={"newTaskLabel"}
+                title={"Shit do to:"}
+              />
+              <Input
+                type={"text"}
+                name={"newTask"}
+                id={"newTask"}
+                className={"newTaskInput"}
+              />
+                <Label
+                  htmlFor={"checbox"}
+                  ariaLabel={"important task?"}
+                  className={"checkBoxLabel"}
+                  title={"Is this shit important?"}
+                />
+              <Input
+                type={"checkbox"}
+                name={"checkbox"}
+                id={"checkbox"}
+                className={"newTaskCheckbox"}
+              />
+            </Form>
+          </div>
         </>
       )}
     </>
@@ -44,18 +63,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-export async function tasksLoader() {
-  let userSession = JSON.parse(sessionStorage.getItem("User"));
-  let token = userSession.token;
-  const response = await fetch("http://localhost:8000/api/tasks/getAll", {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-
-  const tasks = await response.json();
-  console.log(tasks);
-  return tasks;
-}

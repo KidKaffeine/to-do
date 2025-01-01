@@ -4,12 +4,14 @@ import {
   Route,
 } from "react-router-dom";
 import Layout from "../layout/mainLayout";
-import Login, { loginHandler } from "../pages/login";
+import Login from "../pages/login";
 import Landing from "../pages/landing";
-import SignUp, { signUpUserHandler } from "../pages/signUp";
+import SignUp from "../pages/signUp";
 import SignUpError from "../pages/signUpError";
 import Homepage from "../pages/homepage";
-import { tasksLoader } from "../components/Dashboard/Dashboard";
+import { signUpUserHandler, loginHandler } from "../utils/userActions";
+import { tasksLoader } from "../utils/loaders";
+import { addTaskHandler } from "../utils/tasksActions";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,7 +24,8 @@ const router = createBrowserRouter(
         errorElement={<SignUpError />}
       />
       <Route path="/login" element={<Login />} action={loginHandler}/>
-      <Route path="/homepage" element={<Homepage />} loader={tasksLoader}/>
+      <Route path="/homepage" element={<Homepage />} loader={tasksLoader} action={addTaskHandler}>
+      </Route>
     </Route>
   )
 );

@@ -23,7 +23,7 @@ const createTask = async (req, res) => {
     res.status(201).json(newTask);
   } catch (error) {
     console.log(error);
-    throw new Error({ message: "Could not create tasks." });
+    throw new Error({ message: "Could not create task." });
   }
 };
 

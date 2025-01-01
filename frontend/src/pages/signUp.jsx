@@ -1,7 +1,7 @@
 import "../styles/pages.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import { Link, Form, redirect } from "react-router";
+import { Link, Form } from "react-router";
 import Label from "../components/Label/Label";
 import Input from "../components/Input/Input";
 import Button from "../components/Button/Button";
@@ -47,33 +47,3 @@ export default function SignUp() {
     </>
   );
 }
-
-export const signUpUserHandler = async ({ request }) => {
-  try {
-    const formData = await request.formData();
-    const userData = Object.fromEntries(formData);
-
-    const response = await fetch("http://localhost:8000/api/users/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-    });
-
-    if (!response.ok) {
-      console.log(response.error);
-      throw new Error("Couldn't complete sign up.");
-    }
-
-    let user = await response.json()
-    let userSession = JSON.stringify(user)
-  
-    sessionStorage.setItem("User", [userSession]);
-
-    return redirect("/homepage");
-  } catch (error) {
-    console.log(error);
-    throw new Error("Email already in use, please log in.");
-  }
-};

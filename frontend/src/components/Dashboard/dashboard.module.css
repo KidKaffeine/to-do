@@ -1,47 +1,44 @@
 .list {
-    padding: 0;
-    list-style: none;
-    width: 75%;
-    overflow: auto;
+  padding: 0;
+  list-style: none;
+  width: 75%;
+  overflow: auto;
 }
 
-.list li {
-    border: solid 1px #000;
-    border-radius: 7px;
-    margin: 7px 0;
-    padding: 10px;
+small {
+  margin-left: 10px;
 }
 
-.list li p {
-    margin: 0 0 20px 0;
+h2 {
+  align-self: center;
+  color: var(--flamingo);
+  margin: 0;
 }
 
-.list li div > * {
-    display: inline;
-    color: yellow;
+.taskCard {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #000;
+  margin-top: 5em;
+  height: 13rem;
+  border-radius: 7px;
+  padding: 15px 7px;
+  width: 70%;
+  background-color: var(--lemon);
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.1);
 }
 
-.list li div {
-    position: relative;
+form {
+  display: flex;
+  flex-direction: column;
 }
 
-.editIcon, 
-.deleteIcon {
-    position: absolute;
-}
-
-.deleteIcon {
-    right: 10px;
-    bottom: 2px;
-}
-
-.editIcon {
-    right: 50px;
-    bottom: 2px;
+.taskCard form > * {
+  margin: 10px 0 0 10px;
 }
 
 @media only screen and (min-width: 768px) {
-    .list {
-      width: 50%;
-    }
+  .list {
+    width: 50%;
   }
+}

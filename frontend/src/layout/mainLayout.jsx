@@ -9,23 +9,24 @@ export default function Layout() {
   useEffect(() => {
     const fetchUser = async () => {
       let userSession = JSON.parse(sessionStorage.getItem("User"));
-      let token = userSession.token;
+      if (userSession) {
+        let token = userSession.token;
 
-      const response = await fetch("http://localhost:8000/api/users/user", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      
-      const user = await response.json();
+        const response = await fetch("http://localhost:8000/api/users/user", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
-      if (!response.ok) {
-          console.log(response.error)
-      }
-      
+        const user = await response.json();
+
+        if (!response.ok) {
+          console.log(response.error);
+        }
+
         setUser([user]);
-      
+      }
     };
     fetchUser();
   }, []);
