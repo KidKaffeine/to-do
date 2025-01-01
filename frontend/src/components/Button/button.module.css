@@ -1,26 +1,25 @@
 .registerButton,
 .loginButton {
-    align-self: center;
-    background-color: var(--lemon);
-    font-family: var(--text-font);
-    font-size: 16px;
-    border: solid 1px transparent;
-    margin-top: 20px;
-    padding: 5px 12px;
-    border-radius: 7px;
+  align-self: center;
+  background-color: var(--lemon);
+  font-family: var(--secundary-font);
+  font-size: 16px;
+  border: solid 1px transparent;
+  margin-top: 50px;
+  padding: 5px 12px;
+  border-radius: 7px;
 }
 
 .registerButton:hover,
 .loginButton:hover {
-    background-color: var(--puma);
-    color: var(--lemon);
-    transition: margin-right 2s;
-    cursor: pointer;
+  background-color: var(--puma);
+  color: var(--lemon);
+  transition: margin-right 2s;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 920px) {
-    .registerButton {
+  .registerButton {
     align-self: flex-start;
-    } 
-        
   }
+}

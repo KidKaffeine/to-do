@@ -37,6 +37,7 @@ export default function Layout() {
       <Container className="mainContainer">
         <Outlet context={user} />
       </Container>
+      <hr className="rule"/>
     </>
   );
 }

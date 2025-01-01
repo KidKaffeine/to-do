@@ -6,14 +6,13 @@
   --flamingo: rgb(252, 16, 186);
   --puma: rgb(0, 0, 0);
   --lemon: rgb(232, 245, 94);
-  --header-font:  "Major Mono Display", monospace;
-  --text-font: "Abel", sans-serif
+  --main-font:  "Major Mono Display", monospace;
+  --secundary-font: "Abel", sans-serif
 }
 
 body {
   margin: 0;
   background-color: var(--flamingo);
-  font-family: var(--text-font);
   min-height: 100vh;   
   box-sizing: border-box;
 }

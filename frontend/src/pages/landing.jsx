@@ -18,7 +18,6 @@ export default function Landing() {
         Login
         <FontAwesomeIcon icon={faArrowRightToBracket} />
       </Link>
-      <hr className="landingRule" />
     </>
   );
 }

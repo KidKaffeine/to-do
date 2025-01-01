@@ -16,7 +16,6 @@ export default function Homepage() {
       {user.length ? (
         <>
           <Dashboard tasks={tasks} />
-          <hr className="homepageRule" />
         </>
       ) : (
         <h2>Loading...</h2>

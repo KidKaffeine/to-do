@@ -38,7 +38,6 @@ export default function SignUp() {
         />
         <Button title="Submit" type="submit" className="registerButton" />
       </Form>
-      <hr className="registerLine" />
       <h4 className="registerSubHeader"> Already a user? </h4>
       <Link to="/login" className="registerLink">
         Take me to login

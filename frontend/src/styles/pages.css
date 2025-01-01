@@ -3,12 +3,19 @@
 .landingHeader,
 .signUpErrorHeader, 
 .loginHeader {
-  font-family: var(--header-font);
+  font-family: var(--main-font);
 }
 
 .loginHeader {
   text-align: center;
   margin: 0;
+  color: var(--lemon);
+  margin-top: 100px;
+}
+
+.landingHeader {
+  margin: 100px 0;
+  color: var(--lemon);
 }
 
 .registerForm, 
@@ -21,24 +28,17 @@
   margin-top: 20px;
 }
 
-.registerRule, 
-.landingRule, 
-.loginRule,
-.homepageRule {
-  margin: 50px;
+.rule {
   width: 80%;
   border-color: var(--puma);
   border-style: solid;
 }
 
-.homepageRule {
-  position: fixed; 
-  bottom: 13rem;
-}
 
 .registerLink {
   text-decoration: none;
   color: var(--lemon);
+  font-family: var(--secundary-font);
 }
 
 .registerLink > * {
@@ -48,6 +48,7 @@
 .landingSignUpLink, 
 .landingLoginLink,
 .errorLoginLink {
+  font-family: var(--secundary-font);
   text-decoration: none;
   color: var(--lemon);
   font-size: 18px;
@@ -68,12 +69,6 @@
 .landingRule,
 .landingErrorRule {
   margin-top: 150px;
-}
-
-.landingHeader,
-.signUpErrorHeader {
-  margin: 50px;
-  text-align: center;
 }
 
 .signUpErrorHeader {

@@ -29,7 +29,6 @@ export default function Login() {
         />
         <Button title="Submit" type="submit" className="loginButton" />
       </Form>
-      <hr className="loginRule" />
     </>
   );
 }

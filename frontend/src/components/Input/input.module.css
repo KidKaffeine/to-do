@@ -10,6 +10,7 @@
   border-radius: 7px;
   padding: 0 0 0 5px;
   box-shadow: 0 0 0 40px var(--flamingo) inset !important;
+  font-family: var(--secundary-font);
 }
 
 .newTaskInput {
@@ -18,7 +19,8 @@
   height: 25px;
   width: 60%;
   border: solid 1px var(--puma);
-  border-radius: 7px;
+  border-radius: 5px;
+  font-family: var(--secundary-font);
 }
 
 input[type="checkbox"] {
@@ -50,7 +52,9 @@ input[type="checkbox"]:checked::after {
 .passwordRegisterInput:focus,
 .emailRegisterInput:focus,
 .usernameRegisterInput:focus,
-.newTaskInput:focus {
+.newTaskInput:focus, 
+.loginPasswordInput:focus, 
+.loginEmailInput {
   outline: none;
 }
 

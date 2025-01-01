@@ -11,7 +11,8 @@ import SignUpError from "../pages/signUpError";
 import Homepage from "../pages/homepage";
 import { signUpUserHandler, loginHandler } from "../utils/userActions";
 import { tasksLoader } from "../utils/loaders";
-import { addTaskHandler } from "../utils/tasksActions";
+import { addTaskHandler, deleteTaskHandler } from "../utils/tasksActions";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,8 +24,17 @@ const router = createBrowserRouter(
         action={signUpUserHandler}
         errorElement={<SignUpError />}
       />
-      <Route path="/login" element={<Login />} action={loginHandler}/>
-      <Route path="/homepage" element={<Homepage />} loader={tasksLoader} action={addTaskHandler}>
+      <Route path="/login" element={<Login />} action={loginHandler} />
+      <Route
+        path="/homepage/"
+        element={<Homepage />}
+        loader={tasksLoader}
+        action={addTaskHandler}
+      >
+        <Route 
+        path="delete/:id"
+        action={deleteTaskHandler}
+        />
       </Route>
     </Route>
   )

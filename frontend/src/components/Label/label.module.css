@@ -1,18 +1,20 @@
 .emailRegisterLabel,
 .passwordRegisterLabel,
-.usernameRegisterLabel, 
+.usernameRegisterLabel,
 .loginEmailLabel,
 .loginPasswordLabel {
   color: var(--lemon);
   margin: 8px 0px;
+  font-family: var(--secundary-font);
 }
 
 .loginEmailLabel,
 .loginPasswordLabel {
- align-self: flex-start; 
+  align-self: flex-start;
 }
 
 .newTaskLabel,
 .checkBoxLabel {
-  color: var(--flamingo);
+  font-family: var(--secundary-font);
+  color: rgba(0, 0, 255)
 }

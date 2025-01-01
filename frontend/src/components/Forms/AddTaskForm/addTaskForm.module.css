@@ -1,0 +1,28 @@
+.cardHeader {
+    align-self: center;
+    color: var(--flamingo);
+    margin: 0 0 30px 0;
+    font-family: var(--main-font);
+  }
+  
+  .taskCard {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #000;
+    margin-top: 5em;
+    height: 13rem;
+    border-radius: 7px;
+    padding: 40px 20px;
+    width: 70%;
+    background-color: var(--lemon);
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.1);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .taskCard form > * {
+    margin: 10px 0 0 0;
+  }

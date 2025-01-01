@@ -1,16 +1,20 @@
-import styles from './listItem.module.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import styles from "./listItem.module.css";
+import DeleteTaskForm from "../Forms/DeleteTaskForm/DeleteTaskForm"
 
 function ListItem({ task }) {
   return (
     <>
       <li>
-        <p>Shit:<small>{task.task}</small></p>
         <div>
-          <p>Date:</p><small>{task.createdAt.substring(0, 10)}</small>
-          <FontAwesomeIcon icon={faTrash} className={styles.deleteIcon} />
-          <FontAwesomeIcon icon={faPenToSquare} className={styles.editIcon} />
+          <p className={styles.paragraph}>Shit:</p>{" "}
+          <small className={styles.task}>{task.task}</small>
+        </div>
+        <div>
+          <p className={styles.paragraph}>Added:</p>
+          <small className={styles.date}>
+            {task.createdAt.substring(0, 10)}
+          </small>
+         <DeleteTaskForm id={task._id}/>
         </div>
       </li>
     </>
