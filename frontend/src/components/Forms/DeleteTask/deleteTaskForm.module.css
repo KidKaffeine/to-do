@@ -1,0 +1,12 @@
+.addTaskForm {
+    position: relative;
+}
+
+.deleteBtn {
+    background-color: transparent;
+    color:rgba(0, 0, 255);
+    border: none;
+    position: absolute;
+    bottom: 0px;
+    right: -70px;
+}

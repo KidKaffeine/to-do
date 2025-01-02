@@ -13,28 +13,19 @@ import { signUpUserHandler, loginHandler } from "../utils/userActions";
 import { tasksLoader } from "../utils/loaders";
 import { addTaskHandler, deleteTaskHandler } from "../utils/tasksActions";
 
-
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
+    <Route path="/" element={<Layout />} loader={tasksLoader}>
       <Route path="/" element={<Landing />} />
       <Route
-        path="/signUp"
+        path="signUp"
         element={<SignUp />}
         action={signUpUserHandler}
         errorElement={<SignUpError />}
       />
-      <Route path="/login" element={<Login />} action={loginHandler} />
-      <Route
-        path="/homepage/"
-        element={<Homepage />}
-        loader={tasksLoader}
-        action={addTaskHandler}
-      >
-        <Route 
-        path="delete/:id"
-        action={deleteTaskHandler}
-        />
+      <Route path="login" element={<Login />} action={loginHandler} />
+      <Route path="homepage" element={<Homepage />} action={addTaskHandler}>
+        <Route path="delete/:id" action={deleteTaskHandler} />
       </Route>
     </Route>
   )

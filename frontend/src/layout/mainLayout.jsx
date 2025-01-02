@@ -1,41 +1,15 @@
-import { Outlet } from "react-router";
-import { useEffect, useState } from "react";
+import { Outlet, useLoaderData } from "react-router";
 import Container from "../components/Container/Container";
 import Header from "../components/Header/Header";
 
 export default function Layout() {
-  const [user, setUser] = useState([]);
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      let userSession = JSON.parse(sessionStorage.getItem("User"));
-      if (userSession) {
-        let token = userSession.token;
-
-        const response = await fetch("http://localhost:8000/api/users/user", {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-
-        const user = await response.json();
-
-        if (!response.ok) {
-          console.log(response.error);
-        }
-
-        setUser([user]);
-      }
-    };
-    fetchUser();
-  }, []);
+  const userTasks = useLoaderData();
 
   return (
     <>
       <Header />
       <Container className="mainContainer">
-        <Outlet context={user} />
+        <Outlet context={userTasks} />
       </Container>
       <hr className="rule"/>
     </>

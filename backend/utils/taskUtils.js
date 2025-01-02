@@ -59,7 +59,7 @@ const deleteTask = async (req, res) => {
     if (req.params.id === "") {
       res.status(400).json({ message: "Please select a task to delete." });
     }
-
+    console.log(req.params)
     const id = req.params.id;
     await Tasks.findOneAndDelete({ _id: id });
 

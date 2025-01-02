@@ -75,9 +75,24 @@
   padding-inline: 35px;
 } 
 
+.list {
+  padding: 0;
+  list-style: none;
+  width: 75%;
+  overflow: auto;
+}
+
+.listHeader {
+  font-family: var(--main-font);
+}
+
+
 @media only screen and (min-width: 768px) {
   .landingLoginLink, 
   .landingSignUpLink {
     width: 20%;
+  }
+  .list {
+    width: 50%;
   }
 }

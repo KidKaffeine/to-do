@@ -22,7 +22,7 @@ export async function addTaskHandler({ request }) {
         }
     
         await response.json();
-        redirect("/homepage");
+        redirect("homepage");
       } catch (error) {
         console.log(error);
         throw new Error("Something went wrong");

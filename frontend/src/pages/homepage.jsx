@@ -1,25 +1,26 @@
-import { useOutletContext, useLoaderData } from "react-router";
-import { useEffect, useState } from "react";
-import Dashboard from "../components/Dashboard/Dashboard";
+import "../styles/pages.css";
+import { Outlet, useOutletContext } from "react-router";
+import AddTaskForm from "../components/Forms/AddTask/AddTaskForm";
+import ListItem from "../components/ListItem/ListItem"
 
 export default function Homepage() {
-  const user = useOutletContext();
-  const userTasks = useLoaderData();
-  const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    setTasks(userTasks);
-  }, [userTasks]);
+  const userTasks = useOutletContext();
 
   return (
     <>
-      {user.length ? (
+      {userTasks.length > 0 ? (
         <>
-          <Dashboard tasks={tasks} />
+          <h2 className="listHeader"> To do</h2>
+          <ul className="list">
+            {userTasks.toReversed().map((task) => {
+              return <ListItem task={task} key={task._id} />;
+            })}
+          </ul>
         </>
       ) : (
-        <h2>Loading...</h2>
+        <AddTaskForm />
       )}
+      <Outlet />
     </>
   );
 }
