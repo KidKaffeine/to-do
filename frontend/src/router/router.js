@@ -1,22 +1,28 @@
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Navigate,
   Route,
 } from "react-router-dom";
 import Layout from "../layout/mainLayout";
 import Login from "../pages/login";
-import Landing from "../pages/landing";
+// import Landing from "../pages/landing";
 import SignUp from "../pages/signUp";
 import SignUpError from "../pages/signUpError";
 import Homepage from "../pages/homepage";
 import { signUpUserHandler, loginHandler } from "../utils/userActions";
 import { tasksLoader } from "../utils/loaders";
-import { addTaskHandler, deleteTaskHandler } from "../utils/tasksActions";
+import {
+  addTaskHandler,
+  deleteTaskHandler,
+  updateTaskHandler,
+} from "../utils/tasksActions";
+import Dashboard from "../pages/dashboard";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />} loader={tasksLoader}>
-      <Route path="/" element={<Landing />} />
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Navigate replace to={"/signUp"} />} />
       <Route
         path="signUp"
         element={<SignUp />}
@@ -24,8 +30,15 @@ const router = createBrowserRouter(
         errorElement={<SignUpError />}
       />
       <Route path="login" element={<Login />} action={loginHandler} />
-      <Route path="homepage" element={<Homepage />} action={addTaskHandler}>
-        <Route path="delete/:id" action={deleteTaskHandler} />
+      <Route
+        path="homepage"
+        element={<Homepage />}
+        action={addTaskHandler}
+        loader={tasksLoader}
+      >
+        <Route index element={<Dashboard />}/>
+          <Route path="delete/:id" action={deleteTaskHandler} />
+          <Route path="update/:id" action={updateTaskHandler} />
       </Route>
     </Route>
   )

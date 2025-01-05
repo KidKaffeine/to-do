@@ -1,20 +1,27 @@
 import styles from "./deleteTaskForm.module.css";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form } from "react-router";
 
-function DeleteTaskForm({ id }) {
+function DeleteTaskForm({ id, setIsEditing }) {
   return (
     <>
-      <Form
-        method="delete"
-        action={`/homepage/delete/${id}`}
-        className={styles.addTaskForm}
-      >
-        <button type="submit" className={styles.deleteBtn}>
-          <FontAwesomeIcon icon={faTrash} />
-        </button>
-      </Form>
+      <span className={styles.actionsFormContainer}> 
+        <Form
+          method="delete"
+          action={`/homepage/delete/${id}`}
+          className="test"
+        >
+          <button type="submit" className={styles.deleteBtn}>
+            <FontAwesomeIcon icon={faTrash} />
+          </button>
+        </Form>
+        <FontAwesomeIcon
+          icon={faPenToSquare}
+          className={styles.editBtn}
+          onClick={() => setIsEditing(true)}
+        />
+      </span>
     </>
   );
 }

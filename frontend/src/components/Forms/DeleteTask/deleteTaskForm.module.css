@@ -1,12 +1,20 @@
-.addTaskForm {
-    position: relative;
+span {
+   display: flex;
+   justify-content: flex-end;
+   margin-left: 50px;
+}
+
+form {
+    display: inline;
 }
 
 .deleteBtn {
     background-color: transparent;
     color:rgba(0, 0, 255);
     border: none;
-    position: absolute;
-    bottom: 0px;
-    right: -70px;
 }
+
+.editBtn {
+    color:rgba(0, 0, 255);
+    margin-left: 10px;
+  }

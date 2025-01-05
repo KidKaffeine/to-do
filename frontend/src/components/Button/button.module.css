@@ -10,6 +10,7 @@
   border-radius: 7px;
 }
 
+
 .registerButton:hover,
 .loginButton:hover {
   background-color: var(--puma);
@@ -19,7 +20,8 @@
 }
 
 @media screen and (min-width: 920px) {
-  .registerButton {
+  .registerButton, 
+  .loginButton {
     align-self: flex-start;
   }
 }

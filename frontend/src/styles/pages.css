@@ -1,6 +1,5 @@
 .registerHeader,
-.registerSubHeader, 
-.landingHeader,
+.registerSubHeader,
 .signUpErrorHeader, 
 .loginHeader {
   font-family: var(--main-font);
@@ -13,17 +12,10 @@
   margin-top: 100px;
 }
 
-.landingHeader {
-  margin: 100px 0;
-  color: var(--lemon);
-}
-
 .registerForm, 
 .loginForm {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   width: 80%;
   margin-top: 20px;
 }
@@ -32,6 +24,7 @@
   width: 80%;
   border-color: var(--puma);
   border-style: solid;
+  margin-block: 0 5em;
 }
 
 
@@ -45,8 +38,6 @@
   margin-left: 10px;
 }
 
-.landingSignUpLink, 
-.landingLoginLink,
 .errorLoginLink {
   font-family: var(--secundary-font);
   text-decoration: none;
@@ -60,16 +51,10 @@
   line-height: 30px;
 }
 
-.landingLoginLink > *, 
-.landingSignUpLink > *,
 .errorLoginLink > * {
   margin-left: 10px;
 }
 
-.landingRule,
-.landingErrorRule {
-  margin-top: 150px;
-}
 
 .signUpErrorHeader {
   padding-inline: 35px;
@@ -86,12 +71,62 @@
   font-family: var(--main-font);
 }
 
+li {
+  border: solid 1px #000;
+  border-radius: 7px;
+  margin: 20px;
+  padding: 20px;
+  background-color: var(--lemon);
+  box-shadow: 6px 6px 2px 1px rgba(0, 0, 255, 0.3);
+}
+
+.task, 
+.date {
+  font-family: var(--test-font);
+  color: var(--puma)
+}
+
+.paragraph {
+  margin: 5px 0;
+  font-size: 12px;
+  color:rgba(0, 0, 255);
+  font-family: var(--main-font);
+}
+
+.listItemContainer > * {
+  display: inline;
+}
+
+.cardHeader {
+  align-self: center;
+  color: var(--flamingo);
+  margin: 0 0 30px 0;
+  font-family: var(--main-font);
+}
+
+.taskCard {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #000;
+  margin-top: 1em;
+  height: 13rem;
+  border-radius: 7px;
+  padding: 40px 20px;
+  width: 70%;
+  background-color: var(--lemon);
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.1);
+}
+
+.addTaskForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.taskCard .addTaskForm > * {
+  margin: 10px 0 0 0;
+}
 
 @media only screen and (min-width: 768px) {
-  .landingLoginLink, 
-  .landingSignUpLink {
-    width: 20%;
-  }
   .list {
     width: 50%;
   }

@@ -15,6 +15,7 @@
 
 .newTaskLabel,
 .checkBoxLabel {
-  font-family: var(--secundary-font);
+  font-size: 20px;
+  font-family: var(--test-font);
   color: rgba(0, 0, 255)
 }

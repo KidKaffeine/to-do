@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+
 
 
 :root {
@@ -7,7 +9,8 @@
   --puma: rgb(0, 0, 0);
   --lemon: rgb(232, 245, 94);
   --main-font:  "Major Mono Display", monospace;
-  --secundary-font: "Abel", sans-serif
+  --secundary-font: "Abel", sans-serif;
+  --test-font: "Jersey 15", serif;
 }
 
 body {
