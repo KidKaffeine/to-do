@@ -1,20 +1,17 @@
-span {
-   display: flex;
-   justify-content: flex-end;
-   margin-left: 50px;
-}
-
 form {
     display: inline;
+    grid-column: 2/6;
 }
 
 .deleteBtn {
-    background-color: transparent;
-    color:rgba(0, 0, 255);
-    border: none;
+  background-color: transparent;
+  color: rgba(0, 0, 255);
+  border: none;
 }
 
-.editBtn {
-    color:rgba(0, 0, 255);
-    margin-left: 10px;
+
+@media only screen and (min-width: 600px) {
+  form {
+    grid-column: 6/7;
   }
+}

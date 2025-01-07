@@ -25,10 +25,11 @@ export default function Homepage() {
         <DotLoader color={"black"} size={100} aria-label="Loading Spinner" />
       ) : tasks && tasks.length === 0 ? (
         <>
+        <h2 className="header" >Start now</h2>
           <div className={"taskCard"}>
-            <h2 className={"cardHeader"}>
+            <h3 className={"cardHeader"}>
               <em> You have nothing do...</em>
-            </h2>
+            </h3>
             <Form
               method="post"
               className={"addTaskForm"}
@@ -47,7 +48,7 @@ export default function Homepage() {
                 id={"newTask"}
                 className={"newTaskInput"}
               />
-              {data && data.error && <p>{data.error}</p>}
+              {data && data.error && <p className="errorParagraph">{data.error}</p>}
               <Label
                 htmlFor={"checkbox"}
                 ariaLabel={"important task?"}

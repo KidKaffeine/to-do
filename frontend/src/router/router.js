@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import Layout from "../layout/mainLayout";
 import Login from "../pages/login";
-// import Landing from "../pages/landing";
 import SignUp from "../pages/signUp";
 import SignUpError from "../pages/signUpError";
 import Homepage from "../pages/homepage";

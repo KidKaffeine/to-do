@@ -25,18 +25,17 @@
 
 input[type="checkbox"] {
   appearance: none;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   background-color: var(--lemon);
   border: 1px solid var(--puma);
   border-radius: 5px;
   cursor: pointer;
   content: "";
-  margin-right: 20px;
 }
 
 input[type="checkbox"]::after {
-  color: var(--puma);
+  color: rgb(154, 154, 239);
   display: none;
 }
 

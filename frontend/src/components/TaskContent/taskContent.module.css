@@ -1,0 +1,47 @@
+.listItemContainer {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.task,
+.date {
+  font-family: var(--test-font);
+  color: var(--puma);
+}
+
+.paragraph {
+  grid-column: 1/ 2;
+  margin: 5px 0;
+  font-size: 12px;
+  color: rgba(0, 0, 255);
+  font-family: var(--main-font);
+}
+
+.date {
+  grid-column: 2/6;
+  margin: 4px 0;
+}
+
+.task {
+  grid-column: 2/8;
+  margin: 4px 0;
+}
+
+.editBtn {
+  color: rgba(0, 0, 255);
+  margin-left: 10px;
+  grid-column: 8/9;
+}
+
+.actionsContainer {
+  grid-column: 6/9;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+@media only screen and (min-width: 600px) {
+  .editBtn {
+    grid-column: 8/10;
+  }
+}

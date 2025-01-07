@@ -4,7 +4,7 @@ export async function addTaskHandler({ request }) {
   try {
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
-
+   
     if (data.newTask.length < 10) {
       return { error: "Please add a task." };
     }
@@ -68,7 +68,7 @@ export async function updateTaskHandler({ request, params }) {
     let formData = await request.formData();
     let data = Object.fromEntries(formData);
     let id = params.id;
-
+  
     if (data.updateTask.length < 10) {
       return { error: "Please update task." };
     }
@@ -79,7 +79,7 @@ export async function updateTaskHandler({ request, params }) {
     const response = await fetch(
       `http://localhost:8000/api/tasks/update/${id}`,
       {
-        method: "PUT",
+        method: "PATCH",
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

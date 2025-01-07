@@ -2,7 +2,7 @@ const Tasks = require("../db/models/tasksModel");
 
 const getAllTasks = async (req, res) => {
   try {
-    const tasks = await Tasks.find({user: req.user.id})
+    const tasks = await Tasks.find({ user: req.user.id });
 
     res.status(200).json(tasks);
   } catch (error) {
@@ -33,20 +33,23 @@ const updateTask = async (req, res) => {
       res.status(400).json({ message: "Please update or select a task." });
     }
 
-    const id = req.params.id;
-    const taskBody = req.body.newTask;
+    const _id = req.params.id;
+    const task = {
+      task: req.body.newTask,
+      user: req.user.id,
+    };
 
     if (!req.user) {
       res.status(401);
       throw new Error("Not authorised.");
     }
 
-    const updatedTask = await Tasks.findOneAndUpdate({
-      _id: id,
-      task: taskBody,
-      user: req.user.id,
-    });
-
+    const updatedTask = await Tasks.findByIdAndUpdate(
+      _id,
+      task,
+      { new: true }
+    );
+    
     res.status(200).json(updatedTask);
   } catch (error) {
     console.log(error);
@@ -68,8 +71,6 @@ const deleteTask = async (req, res) => {
     throw new Error({ message: "Could not delete task" });
   }
 };
-
-
 
 module.exports = {
   getAllTasks,

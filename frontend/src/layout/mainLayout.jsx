@@ -10,7 +10,6 @@ export default function Layout() {
       <Container className="mainContainer">
         <Outlet />
       </Container>
-      <hr className="rule"/>
     </>
   );
 }
