@@ -1,0 +1,17 @@
+form {
+    display: inline;
+    grid-column: 2/6;
+}
+
+.deleteBtn {
+  background-color: transparent;
+  color: rgba(0, 0, 255);
+  border: none;
+}
+
+
+@media only screen and (min-width: 600px) {
+  form {
+    grid-column: 6/7;
+  }
+}

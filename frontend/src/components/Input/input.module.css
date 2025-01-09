@@ -1,34 +1,75 @@
-.passwordRegisterInput, 
+.passwordRegisterInput,
 .emailRegisterInput,
-.usernameRegisterInput, 
-.loginEmailInput, 
+.usernameRegisterInput,
+.loginEmailInput,
 .loginPasswordInput {
-    background-color: transparent;
-    border: solid 1px var(--lemon);
-    height: 30px;
-    width: 98%;
-    border-radius: 7px;
-    padding: 0 0 0 5px;
-    box-shadow: 0 0 0 40px var(--flamingo) inset ! important
+  background-color: transparent;
+  border: solid 1px var(--lemon);
+  height: 30px;
+  width: 98%;
+  border-radius: 7px;
+  padding: 0 0 0 5px;
+  box-shadow: 0 0 0 40px var(--flamingo) inset !important;
+  font-family: var(--secundary-font);
 }
 
-.passwordRegisterInput:focus, 
+.newTaskInput,
+.updateTaskInput {
+  background-color: transparent;
+  padding: 0 0 0 5px;
+  height: 25px;
+  width: 60%;
+  border: solid 1px var(--puma);
+  border-radius: 5px;
+  font-family: var(--secundary-font);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: var(--lemon);
+  border: 1px solid var(--puma);
+  border-radius: 5px;
+  cursor: pointer;
+  content: "";
+}
+
+input[type="checkbox"]::after {
+  color: rgb(154, 154, 239);
+  display: none;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--lemon);
+}
+
+input[type="checkbox"]:checked::after {
+    display: block;
+    content: "\002714";
+}
+
+.passwordRegisterInput:focus,
 .emailRegisterInput:focus,
-.usernameRegisterInput:focus {
-outline: none;
+.usernameRegisterInput:focus,
+.newTaskInput:focus, 
+.loginPasswordInput:focus, 
+.loginEmailInput, 
+.updateTaskInput {
+  outline: none;
 }
 
 @media screen and (min-width: 768px) {
-    .passwordRegisterInput, 
-    .emailRegisterInput,
-    .usernameRegisterInput, 
-    .loginEmailInput, 
-    .loginPasswordInput {
-        width: 40%;
-    }
-    
-    .loginEmailInput, 
-    .loginPasswordInput {
-        align-self: flex-start;
-    }
+  .passwordRegisterInput,
+  .emailRegisterInput,
+  .usernameRegisterInput,
+  .loginEmailInput,
+  .loginPasswordInput {
+    width: 40%;
   }
+
+  .loginEmailInput,
+  .loginPasswordInput {
+    align-self: flex-start;
+  }
+}

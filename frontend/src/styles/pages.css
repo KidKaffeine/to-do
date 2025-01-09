@@ -1,47 +1,52 @@
 .registerHeader,
-.registerSubHeader, 
-.landingHeader,
+.registerSubHeader,
 .signUpErrorHeader, 
-.loginHeader {
-  font-family: var(--header-font);
+.loginHeader, 
+.listHeader, 
+.header,
+.errorParagraph {
+  font-family: var(--main-font);
 }
 
 .loginHeader {
   text-align: center;
   margin: 0;
+  color: var(--lemon);
+  margin-top: 100px;
 }
 
 .registerForm, 
 .loginForm {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   width: 80%;
   margin-top: 20px;
 }
 
-.registerRule, 
-.landingRule, 
-.loginRule {
-  margin: 50px;
+.rule, 
+.homepageRule {
   width: 80%;
   border-color: var(--puma);
   border-style: solid;
 }
 
+.homepageRule {
+  position: fixed;
+  bottom: 12em;
+}
+
 .registerLink {
   text-decoration: none;
   color: var(--lemon);
+  font-family: var(--secundary-font);
 }
 
 .registerLink > * {
   margin-left: 10px;
 }
 
-.landingSignUpLink, 
-.landingLoginLink,
 .errorLoginLink {
+  font-family: var(--secundary-font);
   text-decoration: none;
   color: var(--lemon);
   font-size: 18px;
@@ -53,30 +58,73 @@
   line-height: 30px;
 }
 
-.landingLoginLink > *, 
-.landingSignUpLink > *,
 .errorLoginLink > * {
   margin-left: 10px;
 }
 
-.landingRule,
-.landingErrorRule {
-  margin-top: 150px;
-}
-
-.landingHeader,
-.signUpErrorHeader {
-  margin-bottom: 50px;
-  text-align: center;
-}
 
 .signUpErrorHeader {
   padding-inline: 35px;
 } 
 
-@media only screen and (min-width: 768px) {
-  .landingLoginLink, 
-  .landingSignUpLink {
-    width: 20%;
+.header {
+  margin: 50px 0;
+}
+
+.errorParagraph {
+color: var(--flamingo);
+font-size: 14px;
+}
+
+.list {
+  padding: 0;
+  list-style: none;
+  width: 75%;
+  overflow: auto;
+}
+
+
+li {
+  border: solid 1px #000;
+  border-radius: 7px;
+  margin: 20px;
+  padding: 20px;
+  background-color: var(--lemon);
+  box-shadow: 6px 6px 2px 1px rgba(0, 0, 255, 0.3);
+}
+
+
+.cardHeader {
+  align-self: center;
+  color: var(--flamingo);
+  margin: 0 0 30px 0;
+  font-family: var(--main-font);
+}
+
+.taskCard {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #000;
+  margin-top: 1em;
+  height: 13rem;
+  border-radius: 7px;
+  padding: 40px 20px;
+  width: 70%;
+  background-color: var(--lemon);
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.1);
+}
+
+.addTaskForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.taskCard .addTaskForm > * {
+  margin: 10px 0 0 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .list {
+    width: 50%;
   }
 }

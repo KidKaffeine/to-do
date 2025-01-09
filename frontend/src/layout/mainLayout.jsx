@@ -1,19 +1,17 @@
-import { Outlet, redirect } from "react-router";
-import { useEffect, useState } from "react";
+import { Outlet } from "react-router";
 import Container from "../components/Container/Container";
 import Header from "../components/Header/Header";
+import { useState, useEffect } from "react";
 
 export default function Layout() {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
     const fetchUser = async () => {
-      let userSession = JSON.parse(sessionStorage.getItem("User"));
-      let token = userSession.token;
+      let userSession = sessionStorage.getItem("User");
+      let { token } = JSON.parse(userSession);
 
-      if (!token) {
-        return redirect("/");
-      }
+      if (!token) return;
 
       const response = await fetch("http://localhost:8000/api/users/user", {
         method: "GET",
@@ -21,16 +19,9 @@ export default function Layout() {
           Authorization: `Bearer ${token}`,
         },
       });
+
       const user = await response.json();
-
-      if (!response.ok) {
-        throw new Error("Something went wrong. Please try again.");
-      }
-
-      setTimeout(() => {
-        setUser([user]);
-      }, 1000);
-      
+      setUser(user);
     };
     fetchUser();
   }, []);

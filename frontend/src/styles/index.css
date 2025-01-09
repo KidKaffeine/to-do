@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+
 
 
 :root {
   --flamingo: rgb(252, 16, 186);
   --puma: rgb(0, 0, 0);
   --lemon: rgb(232, 245, 94);
-  --header-font:  "Major Mono Display", monospace;
-  --text-font: "Abel", sans-serif
+  --main-font:  "Major Mono Display", monospace;
+  --secundary-font: "Abel", sans-serif;
+  --test-font: "Jersey 15", serif;
 }
 
 body {
   margin: 0;
   background-color: var(--flamingo);
-  font-family: var(--text-font);
   min-height: 100vh;   
   box-sizing: border-box;
 }
