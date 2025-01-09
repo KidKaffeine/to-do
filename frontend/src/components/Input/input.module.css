@@ -13,8 +13,9 @@
   font-family: var(--secundary-font);
 }
 
-.newTaskInput {
-  background-color: var(--lemon);
+.newTaskInput,
+.updateTaskInput {
+  background-color: transparent;
   padding: 0 0 0 5px;
   height: 25px;
   width: 60%;
@@ -53,7 +54,8 @@ input[type="checkbox"]:checked::after {
 .usernameRegisterInput:focus,
 .newTaskInput:focus, 
 .loginPasswordInput:focus, 
-.loginEmailInput {
+.loginEmailInput, 
+.updateTaskInput {
   outline: none;
 }
 

@@ -1,5 +1,7 @@
 import styles from "./taskContent.module.css";
 import DeleteTaskForm from "../Forms/DeleteTask/DeleteTaskForm";
+import Input from "../Input/Input"
+import Button from "../Button/Button"
 import { Form } from "react-router";
 import { useState } from "react";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
@@ -18,8 +20,8 @@ function TaskContent({ task }) {
             action={`/homepage/update/${task._id}`}
             onSubmit={() => setIsEditing(false)}
           >
-            <input type="text" name="updateTask" id="newTask" />
-            <button type="submit">Submit</button>
+            <Input type="text" name="updateTask" id="newTask"  className={"updateTaskInput"}/>
+            <Button type="submit" className={"updateTaskBtn"} title={"Submit"}/>
           </Form>
         </>
       ) : (

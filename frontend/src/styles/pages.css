@@ -23,10 +23,16 @@
   margin-top: 20px;
 }
 
-.rule {
+.rule, 
+.homepageRule {
   width: 80%;
   border-color: var(--puma);
   border-style: solid;
+}
+
+.homepageRule {
+  position: fixed;
+  bottom: 12em;
 }
 
 .registerLink {

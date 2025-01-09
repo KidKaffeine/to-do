@@ -4,7 +4,7 @@ import {
   useLoaderData,
   Form,
   useActionData,
-  useNavigation,
+  useNavigation
 } from "react-router";
 import Label from "../components/Label/Label";
 import Input from "../components/Input/Input";
@@ -17,7 +17,6 @@ export default function Homepage() {
   const submitting = navigation.state === "submitting";
   const isLoading = navigation.state === "loading";
 
-  //check for user // navigate
 
   return (
     <>
@@ -25,7 +24,7 @@ export default function Homepage() {
         <DotLoader color={"black"} size={100} aria-label="Loading Spinner" />
       ) : tasks && tasks.length === 0 ? (
         <>
-        <h2 className="header" >Start now</h2>
+          <h2 className="header">Start now</h2>
           <div className={"taskCard"}>
             <h3 className={"cardHeader"}>
               <em> You have nothing do...</em>
@@ -48,7 +47,9 @@ export default function Homepage() {
                 id={"newTask"}
                 className={"newTaskInput"}
               />
-              {data && data.error && <p className="errorParagraph">{data.error}</p>}
+              {data && data.error && (
+                <p className="errorParagraph">{data.error}</p>
+              )}
               <Label
                 htmlFor={"checkbox"}
                 ariaLabel={"important task?"}
@@ -66,7 +67,10 @@ export default function Homepage() {
           <Outlet />
         </>
       ) : (
-        <Outlet context={tasks} />
+        <>
+          <Outlet context={tasks} />
+          <hr className="homepageRule" />
+        </>
       )}
     </>
   );

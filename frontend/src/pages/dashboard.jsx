@@ -1,19 +1,17 @@
 import "../styles/pages.css";
 import {
   useOutletContext,
-  useNavigation,
-  // useActionData,
+  useNavigation
 } from "react-router";
 import DotLoader from "react-spinners/DotLoader";
 import TaskContent from "../components/TaskContent/TaskContent";
 
 function Dashboard() {
   const tasks = useOutletContext();
-  // const data = useActionData();
   const navigation = useNavigation();
   const submitting = navigation.state === "submitting";
   const isLoading = navigation.state === "loading";
-
+  
   let content;
 
   if (tasks && tasks.length > 0) {

@@ -21,7 +21,7 @@ export const signUpUserHandler = async ({ request }) => {
       let user = await response.json()
       let userSession = JSON.stringify(user)
     
-      sessionStorage.setItem("User", [userSession]);
+      sessionStorage.setItem("User", userSession);
   
       return redirect("/login");
     } catch (error) {
