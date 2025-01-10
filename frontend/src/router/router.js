@@ -9,6 +9,7 @@ import Login from "../pages/login";
 import SignUp from "../pages/signUp";
 import SignUpError from "../pages/signUpError";
 import Homepage from "../pages/homepage";
+import AddTask from "../pages/addTask";
 import { signUpUserHandler, loginHandler } from "../utils/userActions";
 import { tasksLoader } from "../utils/loaders";
 import {
@@ -17,6 +18,7 @@ import {
   updateTaskHandler,
 } from "../utils/tasksActions";
 import Dashboard from "../pages/dashboard";
+import Important from "../pages/important";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,9 +37,11 @@ const router = createBrowserRouter(
         action={addTaskHandler}
         loader={tasksLoader}
       >
-        <Route index element={<Dashboard />}/>
-          <Route path="delete/:id" action={deleteTaskHandler} />
-          <Route path="update/:id" action={updateTaskHandler} />
+        <Route index element={<Dashboard />} />
+        <Route path="add" element={<AddTask />} />
+        <Route path="important" element={<Important />} />
+        <Route path="delete/:id" action={deleteTaskHandler} />
+        <Route path="update/:id" action={updateTaskHandler} />
       </Route>
     </Route>
   )

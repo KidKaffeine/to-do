@@ -1,5 +1,3 @@
-import { redirect } from "react-router";
-
 export async function tasksLoader() {
   let userSession = JSON.parse(sessionStorage.getItem("User"));
   let token = userSession.token;

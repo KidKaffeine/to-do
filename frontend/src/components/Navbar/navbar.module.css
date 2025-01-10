@@ -1,0 +1,13 @@
+nav{
+    position: fixed;
+    bottom: 9em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+}
+
+nav > * {
+    color: var(--lemon);
+}
+

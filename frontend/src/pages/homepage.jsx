@@ -4,11 +4,12 @@ import {
   useLoaderData,
   Form,
   useActionData,
-  useNavigation
+  useNavigation,
 } from "react-router";
 import Label from "../components/Label/Label";
 import Input from "../components/Input/Input";
 import DotLoader from "react-spinners/DotLoader";
+import Navbar from "../components/Navbar/Navbar";
 
 export default function Homepage() {
   const tasks = useLoaderData();
@@ -16,7 +17,6 @@ export default function Homepage() {
   const navigation = useNavigation();
   const submitting = navigation.state === "submitting";
   const isLoading = navigation.state === "loading";
-
 
   return (
     <>
@@ -64,12 +64,15 @@ export default function Homepage() {
               />
             </Form>
           </div>
+          <hr className="homepageRule" />
+          <Navbar />
           <Outlet />
         </>
       ) : (
         <>
           <Outlet context={tasks} />
           <hr className="homepageRule" />
+          <Navbar />
         </>
       )}
     </>
