@@ -9,6 +9,7 @@ function DeleteTaskForm({ id }) {
         <Form
           method="delete"
           action={`/homepage/delete/${id}`}
+          className={styles.deleteForm}
         >
           <button type="submit" className={styles.deleteBtn}>
             <FontAwesomeIcon icon={faTrash} />

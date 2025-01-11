@@ -18,8 +18,16 @@ const createTask = async (req, res) => {
     }
 
     const task = req.body.task;
-    const newTask = await Tasks.create({ task: task, user: req.user.id });
+    const isFavorite = req.body.isFavorite;
 
+    const newTask = await Tasks.create({
+      task: task,
+      user: req.user.id,
+      isFavorite: isFavorite,
+    });
+
+
+    console.log(newTask)
     res.status(201).json(newTask);
   } catch (error) {
     console.log(error);
@@ -44,12 +52,8 @@ const updateTask = async (req, res) => {
       throw new Error("Not authorised.");
     }
 
-    const updatedTask = await Tasks.findByIdAndUpdate(
-      _id,
-      task,
-      { new: true }
-    );
-    
+    const updatedTask = await Tasks.findByIdAndUpdate(_id, task, { new: true });
+
     res.status(200).json(updatedTask);
   } catch (error) {
     console.log(error);

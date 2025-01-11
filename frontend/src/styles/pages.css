@@ -8,6 +8,10 @@
   font-family: var(--main-font);
 }
 
+.listHeader {
+  margin-block: 10px;
+}
+
 .loginHeader {
   text-align: center;
   margin: 0;
@@ -32,7 +36,7 @@
 
 .homepageRule {
   position: fixed;
-  bottom: 13em;
+  bottom: 75px;
 }
 
 .registerLink {
@@ -119,12 +123,45 @@ li {
   flex-direction: column;
 }
 
+.formAddTask {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 70%;
+  border: solid 1px var(--puma);
+  border-radius: 9px;
+  padding: 0 20px;
+  margin-top: 50px;
+  background-color: var(--lemon);
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.1);
+}
+
+.formAddTask > * {
+  margin-block: 10px;
+}
+
 .taskCard .addTaskForm > * {
-  margin: 10px 0 0 0;
+  margin: 15px 0 0 0;
+}
+
+.important {
+  color: aquamarine;
+}
+
+.notImportant {
+  color: #000;
 }
 
 @media only screen and (min-width: 600px) {
   .list {
-    width: 50%;
+    width:40%;
+  }
+  .homepageRule {
+    bottom: 4em;
+  }
+  .formAddTask {
+    width: 35%;
   }
 }

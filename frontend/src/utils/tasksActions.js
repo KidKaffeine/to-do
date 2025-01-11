@@ -2,10 +2,11 @@ import { redirect } from "react-router";
 
 export async function addTaskHandler({ request }) {
   try {
-    const formData = await request.formData();
-    const data = Object.fromEntries(formData);
-   
-    if (data.newTask.length < 10) {
+    const data = await request.formData();
+    const task = Object.fromEntries(data);
+    const isFavorite = data.get("favorite");
+
+    if (task.newTask.length < 10) {
       return { error: "Please add a task." };
     }
     let userSession = sessionStorage.getItem("User");
@@ -18,7 +19,7 @@ export async function addTaskHandler({ request }) {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ task: data.newTask }),
+      body: JSON.stringify({ task: task.newTask, isFavorite: isFavorite }),
     });
 
     if (!response.ok) {
@@ -68,7 +69,7 @@ export async function updateTaskHandler({ request, params }) {
     let formData = await request.formData();
     let data = Object.fromEntries(formData);
     let id = params.id;
-  
+
     if (data.updateTask.length < 10) {
       return { error: "Please update task." };
     }

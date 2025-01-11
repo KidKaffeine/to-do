@@ -15,7 +15,7 @@ import { tasksLoader } from "../utils/loaders";
 import {
   addTaskHandler,
   deleteTaskHandler,
-  updateTaskHandler,
+  updateTaskHandler
 } from "../utils/tasksActions";
 import Dashboard from "../pages/dashboard";
 import Important from "../pages/important";
@@ -38,7 +38,7 @@ const router = createBrowserRouter(
         loader={tasksLoader}
       >
         <Route index element={<Dashboard />} />
-        <Route path="add" element={<AddTask />} />
+        <Route path="add" element={<AddTask />} action={addTaskHandler} />
         <Route path="important" element={<Important />} />
         <Route path="delete/:id" action={deleteTaskHandler} />
         <Route path="update/:id" action={updateTaskHandler} />

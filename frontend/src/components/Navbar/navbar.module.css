@@ -1,6 +1,6 @@
 nav{
     position: fixed;
-    bottom: 9em;
+    bottom: 110px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,3 +11,8 @@ nav > * {
     color: var(--lemon);
 }
 
+@media only screen and (min-width: 600px) {
+    nav {
+      bottom: 2em;
+    }
+  }

@@ -1,6 +1,6 @@
-form {
+.deleteForm {
     display: inline;
-    grid-column: 2/6;
+    grid-column: 1/1;
 }
 
 .deleteBtn {
@@ -11,7 +11,7 @@ form {
 
 
 @media only screen and (min-width: 600px) {
-  form {
-    grid-column: 6/7;
+  .deleteForm {
+    grid-column: 3/4;
   }
 }

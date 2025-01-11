@@ -10,13 +10,22 @@
   border-radius: 7px;
 }
 
-.updateTaskBtn {
+.updateTaskBtn,
+.formBtn {
   background-color: rgb(154, 154, 239);
   font-family: var(--secundary-font);
   font-size: 16px;
   border: solid 1px transparent;
   padding: 2px 6px;
   border-radius: 7px;
+}
+
+.formBtn {
+  width: 20%;
+}
+
+
+.updateTaskBtn {
   margin-left: 15px;
 }
 
@@ -29,7 +38,7 @@
 }
 
 @media screen and (min-width: 920px) {
-  .registerButton, 
+  .registerButton,
   .loginButton {
     align-self: flex-start;
   }

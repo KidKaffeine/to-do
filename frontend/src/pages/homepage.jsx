@@ -10,10 +10,15 @@ import Label from "../components/Label/Label";
 import Input from "../components/Input/Input";
 import DotLoader from "react-spinners/DotLoader";
 import Navbar from "../components/Navbar/Navbar";
+import Button from "../components/Button/Button";
+import { useState } from "react";
+import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Homepage() {
   const tasks = useLoaderData();
   const data = useActionData();
+  const [isFavorite, setIsFavorite] = useState(false);
   const navigation = useNavigation();
   const submitting = navigation.state === "submitting";
   const isLoading = navigation.state === "loading";
@@ -50,18 +55,14 @@ export default function Homepage() {
               {data && data.error && (
                 <p className="errorParagraph">{data.error}</p>
               )}
-              <Label
-                htmlFor={"checkbox"}
-                ariaLabel={"important task?"}
-                className={"checkBoxLabel"}
-                title={"Is this shit important?"}
-              />
-              <Input
-                type={"checkbox"}
-                name={"checkbox"}
-                id={"checkbox"}
-                className={"newTaskCheckbox"}
-              />
+                <FontAwesomeIcon
+                  icon={faCircleExclamation}
+                  onClick={() => setIsFavorite(!isFavorite)}
+                  className={ isFavorite ? "important" : "notImportant"}
+                />
+    
+              <Button type={"submit"} className={"formBtn"} title={"Submit"} 
+              name={"favorite"} value={isFavorite}/>
             </Form>
           </div>
           <hr className="homepageRule" />
