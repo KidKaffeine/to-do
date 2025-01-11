@@ -24,38 +24,13 @@
   font-family: var(--secundary-font);
 }
 
-input[type="checkbox"] {
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  background-color: var(--lemon);
-  border: 1px solid var(--puma);
-  border-radius: 5px;
-  cursor: pointer;
-  content: "";
-}
-
-input[type="checkbox"]::after {
-  color: rgb(154, 154, 239);
-  display: none;
-}
-
-input[type="checkbox"]:checked {
-  background-color: var(--lemon);
-}
-
-input[type="checkbox"]:checked::after {
-    display: block;
-    content: "\002714";
-}
-
 .passwordRegisterInput:focus,
 .emailRegisterInput:focus,
 .usernameRegisterInput:focus,
 .newTaskInput:focus, 
 .loginPasswordInput:focus, 
-.loginEmailInput, 
-.updateTaskInput {
+.loginEmailInput:focus, 
+.updateTaskInput:focus {
   outline: none;
 }
 

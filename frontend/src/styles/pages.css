@@ -80,7 +80,8 @@ color: var(--flamingo);
 font-size: 14px;
 }
 
-.list {
+.list, 
+.importantList {
   padding: 0;
   list-style: none;
   width: 75%;
@@ -155,7 +156,8 @@ li {
 }
 
 @media only screen and (min-width: 600px) {
-  .list {
+  .list, 
+  .importantList {
     width:40%;
   }
   .homepageRule {

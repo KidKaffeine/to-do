@@ -3,10 +3,15 @@ import Label from "../components/Label/Label";
 import Input from "../components/Input/Input";
 import { Form } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPoo } from "@fortawesome/free-solid-svg-icons";
+import { faPoo, faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button/Button";
+import { useState } from "react";
+
+;
 
 function AddTask() {
+  const [isFavorite, setIsFavorite] = useState(false);
+
   return (
     <>
       <Form
@@ -15,7 +20,7 @@ function AddTask() {
         action="/homepage/add"
         autoComplete="off"
       >
-      <FontAwesomeIcon icon={faPoo} size="2xl" className="formIcon"/>
+        <FontAwesomeIcon icon={faPoo} size="2xl" className="formIcon" />
         <Label
           htmlFor={"newTask"}
           ariaLabel={"newTask input"}
@@ -28,19 +33,21 @@ function AddTask() {
           id={"newTask"}
           className={"newTaskInput"}
         />
-        <Label
-          htmlFor={"checkbox"}
-          ariaLabel={"important task?"}
-          className={"checkBoxLabel"}
-          title={"Is this shit important?"}
+        <span>
+          <small>Is this important?</small>
+          <FontAwesomeIcon
+            icon={faCircleExclamation}
+            onClick={() => setIsFavorite(!isFavorite)}
+            className={isFavorite ? "important" : "notImportant"}
+          />
+        </span>
+        <Button
+          type={"submit"}
+          className={"formBtn"}
+          title={"Submit"}
+          name={"favorite"}
+          value={isFavorite}
         />
-        <Input
-          type={"checkbox"}
-          name={"checkbox"}
-          id={"checkbox"}
-          className={"newTaskCheckbox"}
-        />
-        <Button type={"submit"} className={"formBtn"} title={"Submit"}/>
       </Form>
     </>
   );

@@ -17,7 +17,7 @@ function Dashboard() {
   if (tasks && tasks.length > 0) {
     content = (
       <>
-        <h2 className="listHeader"> To do</h2>
+        <h2 className="listHeader">To do</h2>
         <ul className="list">
           {tasks?.toReversed().map((task) => {
             return (
